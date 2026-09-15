@@ -23,13 +23,12 @@ img { max-width: 100%; display: block; }
 .topbar .name:hover { text-decoration: none; }
 .topbar nav a { color: var(--sec); font-size: 13.5px; font-weight: 500; margin-left: 26px; }
 .topbar nav a:hover { color: var(--ink); text-decoration: none; }
-.topbar nav a.cv { color: var(--ink); border: 1px solid #d6d6da; border-radius: 980px; padding: 6px 12px; }
+.topbar nav a.cv { color: var(--ink); border: 1px solid #d6d6da; border-radius: 980px; width: 56px; text-align: center; padding: 6px 0; }
 .topbar nav a.cv:hover { border-color: var(--ink); }
 .topbar nav { display: flex; align-items: center; }
-.langsw { display: inline-flex; margin-left: 10px; border: 1px solid #d6d6da; border-radius: 980px; padding: 2px; font-size: 12.5px; line-height: 1; }
-.topbar nav .langsw a { margin: 0; padding: 5px 9px; border-radius: 980px; color: var(--sec); font-weight: 500; }
-.topbar nav .langsw a:hover { color: var(--ink); text-decoration: none; }
-.topbar nav .langsw a.on { background: #efeff1; color: var(--ink); cursor: default; }
+/* language toggle: same size and position on both pages */
+.topbar nav a.langbtn { margin-left: 10px; width: 52px; text-align: center; padding: 6px 0; border-radius: 980px; background: #efeff1; color: var(--ink); font-size: 13px; font-weight: 500; line-height: 1.15; }
+.topbar nav a.langbtn:hover { background: #e4e4e7; text-decoration: none; }
 
 /* Chinese page: Noto Serif SC / Noto Sans SC with system fallbacks */
 html[lang="zh-CN"] {
@@ -124,8 +123,8 @@ body.lb-open { overflow: hidden; }
 @media (max-width: 640px) {
   .topbar .in { padding: 0 18px; }
   .topbar nav a { margin-left: 14px; font-size: 13px; }
-  .topbar nav > a:not(.cv):nth-child(-n+2) { display: none; }
-  .langsw { margin-left: 8px; }
+  .topbar nav > a:not(.cv):not(.langbtn):nth-child(-n+2) { display: none; }
+  .topbar nav a.langbtn { margin-left: 8px; }
   .wrap { padding: 40px 18px 56px; }
   header { grid-template-columns: 1fr; gap: 22px; }
   header img { order: -1; width: 128px; height: 128px; }
@@ -143,5 +142,5 @@ body.lb-open { overflow: hidden; }
 
 /* very narrow phones: keep only the language toggle and CV in the top bar */
 @media (max-width: 440px) {
-  .topbar nav > a:not(.cv) { display: none; }
+  .topbar nav > a:not(.cv):not(.langbtn) { display: none; }
 }
