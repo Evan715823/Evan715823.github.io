@@ -26,9 +26,22 @@ img { max-width: 100%; display: block; }
 .topbar nav a.cv { color: var(--ink); border: 1px solid #d6d6da; border-radius: 980px; width: 56px; text-align: center; padding: 6px 0; }
 .topbar nav a.cv:hover { border-color: var(--ink); }
 .topbar nav { display: flex; align-items: center; }
-/* language toggle: same size and position on both pages */
-.topbar nav a.langbtn { margin-left: 10px; width: 52px; text-align: center; padding: 6px 0; border-radius: 980px; background: #efeff1; color: var(--ink); font-size: 13px; font-weight: 500; line-height: 1.15; }
-.topbar nav a.langbtn:hover { background: #e4e4e7; text-decoration: none; }
+/* language switch: sliding thumb, identical size and position on both pages */
+.topbar nav a.langsw { position: relative; display: inline-flex; align-items: center; margin-left: 10px; width: 92px; height: 31px; padding: 3px; border-radius: 980px; background: #efeff1; color: var(--sec); }
+.topbar nav a.langsw:hover { text-decoration: none; background: #e7e7ea; }
+.langsw .thumb { position: absolute; top: 3px; left: 3px; width: 43px; height: 25px; border-radius: 980px; background: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 1px 6px rgba(0, 0, 0, .06); transition: transform .32s cubic-bezier(.3, .7, .2, 1); }
+.langsw .opt { position: relative; z-index: 1; flex: 1; text-align: center; font-size: 12.5px; font-weight: 500; line-height: 25px; transition: color .32s; }
+.langsw.is-zh .thumb { transform: translateX(43px); }
+.langsw.is-en .opt[lang="en"], .langsw.is-zh .opt[lang="zh-CN"] { color: var(--ink); }
+/* arriving from the other language: start the thumb on the old side, site.js releases it so it slides in */
+.lang-arriving .langsw .thumb, .lang-arriving .langsw .opt { transition: none; }
+.lang-arriving .langsw.is-zh .thumb { transform: none; }
+.lang-arriving .langsw.is-en .thumb { transform: translateX(43px); }
+.lang-arriving .langsw.is-zh .opt[lang="zh-CN"] { color: var(--sec); }
+.lang-arriving .langsw.is-zh .opt[lang="en"] { color: var(--ink); }
+.lang-arriving .langsw.is-en .opt[lang="en"] { color: var(--sec); }
+.lang-arriving .langsw.is-en .opt[lang="zh-CN"] { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .langsw .thumb, .langsw .opt { transition: none; } }
 
 /* Chinese page: Noto Serif SC / Noto Sans SC with system fallbacks */
 html[lang="zh-CN"] {
@@ -123,8 +136,8 @@ body.lb-open { overflow: hidden; }
 @media (max-width: 640px) {
   .topbar .in { padding: 0 18px; }
   .topbar nav a { margin-left: 14px; font-size: 13px; }
-  .topbar nav > a:not(.cv):not(.langbtn):nth-child(-n+2) { display: none; }
-  .topbar nav a.langbtn { margin-left: 8px; }
+  .topbar nav > a:not(.cv):not(.langsw):nth-child(-n+2) { display: none; }
+  .topbar nav a.langsw { margin-left: 8px; }
   .wrap { padding: 40px 18px 56px; }
   header { grid-template-columns: 1fr; gap: 22px; }
   header img { order: -1; width: 128px; height: 128px; }
@@ -142,5 +155,5 @@ body.lb-open { overflow: hidden; }
 
 /* very narrow phones: keep only the language toggle and CV in the top bar */
 @media (max-width: 440px) {
-  .topbar nav > a:not(.cv):not(.langbtn) { display: none; }
+  .topbar nav > a:not(.cv):not(.langsw) { display: none; }
 }
