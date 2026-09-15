@@ -17,7 +17,7 @@ a:hover { text-decoration: underline; }
 img { max-width: 100%; display: block; }
 
 /* top bar */
-.topbar { position: sticky; top: 0; z-index: 9; background: rgba(255, 255, 255, .82); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid var(--rule); }
+.topbar { position: sticky; top: 0; z-index: 9; background: rgba(255, 255, 255, .94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
 .topbar .in { max-width: 880px; margin: 0 auto; padding: 0 28px; height: 54px; display: flex; align-items: center; justify-content: space-between; }
 .topbar .name { font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--ink); letter-spacing: -.005em; }
 .topbar .name:hover { text-decoration: none; }
