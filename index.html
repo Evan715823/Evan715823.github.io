@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yifan Hu</title>
+  <meta name="description" content="Yifan Hu — M.S.E. student at the University of Pennsylvania and student researcher in the GMLR Lab. Robot learning: world models, sim-to-real RL for dexterous manipulation, diffusion policies.">
+  <meta property="og:title" content="Yifan Hu">
+  <meta property="og:description" content="Robot learning at Penn: world models, sim-to-real RL for dexterous hands, diffusion policies.">
+  <meta property="og:image" content="https://evan715823.github.io/assets/img/photo.jpg">
+  <meta property="og:url" content="https://evan715823.github.io/">
+  <meta property="og:type" content="profile">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="in">
+    <a class="name" href="#top">Yifan Hu</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a class="cv" href="Yifan_Hu_Resume.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap" id="top">
+
+  <header>
+    <div>
+      <h1>Yifan Hu</h1>
+      <p class="role">M.S.E. student in Data Science &amp; AI, University of Pennsylvania<br>
+        Student researcher, <a href="https://jiataogu.me/" target="_blank" rel="noopener">GMLR Lab</a>, advised by <a href="https://jiataogu.me/" target="_blank" rel="noopener">Prof. Jiatao Gu</a></p>
+      <p class="links">
+        <a href="mailto:hu5@seas.upenn.edu"><span>✉</span>hu5@seas.upenn.edu</a>
+        <a href="Yifan_Hu_Resume.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="https://github.com/Evan715823" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/yifan-hu-2140a3290/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+    <img src="assets/img/photo.jpg" alt="Portrait of Yifan Hu" width="208" height="208">
+  </header>
+
+  <section class="bio" id="about">
+    <p>I am a master's student in Data Science and Artificial Intelligence at the University of Pennsylvania, and a student researcher in the <a href="https://jiataogu.me/" target="_blank" rel="noopener">Generative Multimodal Learning &amp; Reasoning Lab</a> advised by Prof. Jiatao Gu. My research is on robot learning: world models for robot control, reinforcement learning for dexterous manipulation that transfers from simulation to real hands, and diffusion and flow-based robot policies.</p>
+    <p>In summer 2026 I interned at <a href="https://www.robotera.com/" target="_blank" rel="noopener">ROBOTERA</a>, a humanoid-robot company in Beijing, working on sim-to-real reinforcement learning and diffusion policies for their 21-DoF dexterous hand. In 2025 I interned at Broadsense on robot perception.</p>
+    <p>Before Penn, I received a B.S. in Mathematics with a minor in Computer Science from New York University, graduating summa cum laude with the George Bachman Award in Mathematics. I began my undergraduate studies in financial engineering at Guangdong University of Foreign Studies before transferring to NYU.</p>
+    <p class="open">I am open to research collaborations and internships in robot learning. Feel free to reach out at <a href="mailto:hu5@seas.upenn.edu">hu5@seas.upenn.edu</a>.</p>
+  </section>
+
+  <h2 id="experience">Experience</h2>
+
+  <article class="entry">
+    <a class="thumb" href="assets/video/inhand-rotation.mp4" data-video="assets/video/inhand-rotation.mp4" data-poster="assets/img/inhand-rotation-poster.jpg" aria-label="Play video: in-hand rotation on the XHand1 Pro">
+      <img src="assets/img/inhand-rotation.jpg" alt="XHand1 Pro rotating a cylinder in-hand" loading="lazy" width="960" height="640"><span class="play"></span>
+    </a>
+    <div>
+      <h3>Tactile Sim-to-Real RL for Dexterous In-Hand Rotation</h3>
+      <p class="meta"><b>ROBOTERA</b> · Robot Learning Intern · May – Aug 2026 · Live demo at WAIC 2026</p>
+      <p>A vision-free policy that rotates objects in-hand for 15+ minutes without dropping, transferred zero-shot to a 21-DoF XHand1 Pro. Privileged PPO teachers trained at 20,480 parallel environments in Isaac Lab, distilled HORA/RMA-style into a proprioceptive and tactile student.</p>
+      <p class="el"><a href="assets/video/inhand-rotation.mp4" data-video="assets/video/inhand-rotation.mp4" data-poster="assets/img/inhand-rotation-poster.jpg">Video</a></p>
+    </div>
+  </article>
+
+  <article class="entry">
+    <a class="thumb" href="assets/video/glove-teleop.mp4" data-video="assets/video/glove-teleop.mp4" data-poster="assets/img/glove-teleop-poster.jpg" aria-label="Play video: glove-guided teleoperation">
+      <img src="assets/img/glove-teleop.jpg" alt="Manus glove guiding the XHand1 Pro to rotate a bottle" loading="lazy" width="960" height="640"><span class="play"></span>
+    </a>
+    <div>
+      <h3>DexGen-Teleop: Manus Glove-Guided Diffusion Policy</h3>
+      <p class="meta"><b>ROBOTERA</b> · Robot Learning Intern · 2026 · XHand1 Pro and M7 humanoid</p>
+      <p>The glove gives only high-level intent; a FiLM-conditioned UNet diffusion policy trained on 446K RL-expert transitions generates all finger motion. Demonstrated screwdriver and bottle rotation on hardware and integrated with the M7 humanoid through ROS 2.</p>
+      <p class="el">
+        <a href="assets/video/glove-teleop.mp4" data-video="assets/video/glove-teleop.mp4" data-poster="assets/img/glove-teleop-poster.jpg">Video</a>
+        <a href="assets/video/m7-humanoid.mp4" data-video="assets/video/m7-humanoid.mp4" data-poster="assets/img/m7-humanoid-poster.jpg">On the M7 humanoid</a>
+      </p>
+    </div>
+  </article>
+
+  <article class="entry">
+    <a class="thumb static" href="https://github.com/Evan715823/Depth-Anything-V2-crane" target="_blank" rel="noopener" aria-label="Depth Anything V2 crane repository">
+      <img src="assets/img/broadsense.jpg" alt="Monocular depth map of a port crane scene" loading="lazy" width="960" height="640">
+    </a>
+    <div>
+      <h3>IMU Slope Estimation and Monocular-Depth Collision Monitoring</h3>
+      <p class="meta"><b>Broadsense</b> · Algorithm Engineer Intern · Jun – Aug 2025</p>
+      <p>A ROS 2 road-slope estimator from a single 6-axis IMU with online gyro-bias estimation, and a port-crane collision monitor on one RGB camera built on Depth Anything V2.</p>
+      <p class="el">
+        <a href="https://github.com/Evan715823/slope_estimate" target="_blank" rel="noopener">Slope estimation code</a>
+        <a href="https://github.com/Evan715823/Depth-Anything-V2-crane" target="_blank" rel="noopener">Collision monitor code</a>
+      </p>
+    </div>
+  </article>
+
+  <h2 id="projects">Projects</h2>
+  <div class="projects">
+    <div class="proj"><h3><a href="https://github.com/Evan715823/cheatsheet-generator-skill" target="_blank" rel="noopener">cheatsheet-generator-skill</a><span>★ 191</span></h3><p>Turn course slides and PDFs into dense, exam-ready LaTeX cheatsheets. A Claude Code skill with a browser-based editor.</p></div>
+    <div class="proj"><h3>Notgoogle<span>CIS 5550 · team lead</span></h3><p>Distributed search engine from scratch in Java: replicated KV store, MapReduce, PageRank. 1M+ pages crawled on 5 EC2 nodes.</p></div>
+    <div class="proj"><h3><a href="https://github.com/Evan715823/PhantomMap" target="_blank" rel="noopener">PhantomMap</a><span>course project</span></h3><p>An atlas of where vision-language models place objects that don't exist, across POPE and AMBER with Qwen2.5-VL and LLaVA.</p></div>
+    <div class="proj"><h3>News Source Classification<span>CIS 5190 · team lead</span></h3><p>Scaled the dataset to 91K labeled URLs and fine-tuned DistilBERT to 92.9% accuracy; released on Hugging Face.</p></div>
+    <div class="proj"><h3><a href="https://github.com/Evan715823/rag-gnn-hetionet" target="_blank" rel="noopener">RAG-GNN on Hetionet</a><span>course project</span></h3><p>A heterogeneous GNN retrieves metapaths for drug–disease link prediction; an LLM explains the prediction.</p></div>
+    <div class="proj"><h3><a href="https://github.com/Evan715823/Claude-bar-for-linux" target="_blank" rel="noopener">Claude Pixel Bar</a><span>GNOME extension</span></h3><p>Claude Code usage limits as a pixel-art widget in the GNOME top bar.</p></div>
+  </div>
+
+  <h2 id="education">Education</h2>
+  <div class="edu">
+    <div><b>University of Pennsylvania</b> — M.S.E. in Data Science and Artificial Intelligence</div><div class="d">Sept 2025 – May 2027 (expected)</div>
+    <div class="s">GPA 3.94 / 4.0</div>
+    <div><b>New York University</b> — B.S. in Mathematics, Minor in Computer Science, Summa Cum Laude</div><div class="d">Sept 2023 – May 2025</div>
+    <div class="s">GPA 3.96 / 4.0 · George Bachman Award in Mathematics · Dean's List</div>
+    <div><b>Guangdong University of Foreign Studies</b> — Financial Engineering, transferred to NYU</div><div class="d">Sept 2020 – Jul 2023</div>
+    <div class="s">GPA 3.88 / 4.0</div>
+  </div>
+
+  <footer><span>© 2026 Yifan Hu</span><span><a href="mailto:hu5@seas.upenn.edu">hu5@seas.upenn.edu</a></span></footer>
+</main>
+
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lb-backdrop" data-close></div>
+  <div class="lb-body">
+    <button class="lb-close" type="button" aria-label="Close" data-close>×</button>
+    <video id="lb-video" controls playsinline preload="metadata"></video>
+  </div>
+</div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
